@@ -1,46 +1,34 @@
 import java.util.Scanner;
 
-public class numOccurence {
+public class numOccurence{
+    public static void main(String args[]) {
+ 
+        //Display user to get a word 
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter a word : ");
+        String str = scanner.nextLine();
+ 
+        //String length
+        int len = str.length();
 
-    static void countOccur(char alph, String word, int size){
-        int count=0;
-        for(int i=0; i<size; i++)
-        {
-            if(word.charAt(i) == alph)
-            count++;
-        }
-  
-        System.out.println("The Character '"+alph+"' appears "+count+" times.");
-    }
-
-    
-    public static void main(String args[]){
-        System.out.println("Enter a word: ");
-        //Get scanner class to get input 
-        Scanner sc = new Scanner(System.in);
-        String word = sc.next();
-        int size = word.length();
-
-        // String[] splWord = word.split("");
-        // int size = splWord.length; 
+        //calling method to count occurance 
+        countOccur(str, len);
 
         
+        
+    }
 
-        char charArray[] = word.toCharArray();
-        int size = charArray.length;
-        int temp = 0;
-        for(int i = 0; i < size; i++ ) {
-            for(int j = i+1; j < size; j++) {
-                if(charArray[i]>charArray[j]) {
-                    temp = charArray[i];
-                    charArray[i] = charArray[j];
-                    charArray[j] = (char) temp;
+    //Method to count occurance
+    static void countOccur(String word, int size){
+        int counter[] = new int[256];
+        for (int i = 0; i < size; i++) {
+            counter[(int) word.charAt(i)]++;
+        }
+        
+        for (int j = 0; j< 256; j++) {
+            if (counter[j] != 0) {
+                System.out.println((char) j + " ----> " + counter[j]);
             }
-         }
-      }
-      for(int i = 0 ; i<size ; i++){
-              String = word.charAt(i);
-            countOccur(cWord, word, size);
         }
     }
 }
