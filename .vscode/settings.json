@@ -1,0 +1,6 @@
+{
+    "java.project.sourcePaths": [
+        "CHH_BreadthFirstSearch/bfs/src/main/java/bfs",
+        "CHH_DepthFirstSearch/dfs/src/main/java/dfs"
+    ]
+}

@@ -1,0 +1,1 @@
+Write a program to fin a number of occurance of each letter irrespectively. (Take capital and simple seperatly)
